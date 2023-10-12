@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Taro's Work</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <header id="top">
+      <nav>
+        <a href="#top"><img src="img/logo.png" alt=""></a>
+        <ul>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Works">Works</a></li>
+            <li><a href="#News">News</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><img src="img/icon-instagram.png" alt=""></a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <!-- ただの画像タグにもidやclass指定したほうがよい？ タグ指定でよい？ -->
+      <img src="img/top.jpeg">
+      <section id="About">
+        <h2>About</h2>
+        <div id="profile">
+            <!-- それぞれの要素をdivで囲まなくていい？ 囲むとCSSの設定が複雑になる-->
+            <p id="user_name">TARO YAMADA</p>
+            <br>
+            <ul id="user_detail">
+              <li>tel: 000-0000-0000</li>
+              <li>url: www.xxxxxx.jp</li>
+              <li>mail: xxx@xxxxxx.jp</li>
+            </ul>
+            <br>
+            <p id="user_contents">
+              山田太郎。19XX年生まれ。<br>
+              プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="Works">
+        <h2>Works</h2>
+        <div id="works_images">
+          <ul>
+            <li><img src="img/works1.png"></li>
+            <li><img src="img/works2.png"></li>
+            <li><img src="img/works3.png"></li>
+            <li><img src="img/works4.png"></li>
+            <li><img src="img/works5.png"></li>
+            <li><img src="img/works6.png"></li>
+          </ul>
+        </div>
+      </section>
+      <section id="News">
+        <h2>News</h2>
+        <table id="news-table">
+          <tr>
+            <td>2022.XX.XX</td>
+            <td>コンテスト「ＸＸＸＸＸＸ 2022』で金賞を受賞しました。</td>
+          </tr>
+          <tr>
+            <td>2021.XX.XX</td>
+            <td>ＸＸ月ＸＸ日から写真集「ＸＸＸＸＸＸＸ」の販売を開始します。</td>
+          </tr>
+          <tr>
+            <td>2020.XX.XX</td>
+            <td>【イベント開催のお知らせ】ＸＸでイベントを開催します。</td>
+          </tr>
+          <tr>
+            <td>2019.XX.XX</td>
+            <td>デザイン雑誌「ＸＸＸＸＸＸ Vol.10』に掲載していただきました。</td>
+          </tr>
+          <tr>
+            <td>2019.XX.XX</td>
+            <td>【個展開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト</td>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <section id="Contact">
+        <h2>Contact</h2>
+        <form id="contact-form" action="#" method="post">
+          <!-- フォームの部品 -->
+          <div>
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="name">
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input type="mail" id="email" name="email">
+          </div>
+          <div>
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+        <input type="submit" value="送信">
+      </form>
+      </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="example.js"></script>
+  </body>
+</html>

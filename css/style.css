@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+/*-------------------------------------------
+　全体に関わるレイアウト設定
+-------------------------------------------*/
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h2{
+    margin: 50px 0px;
+}
+
+/*-------------------------------------------
+　header のレイアウト設定
+-------------------------------------------*/
+#top{
+    margin-top: 100px;
+}
+
+#top nav{
+    /* 横並び中央寄せ */
+    display: flex;
+    justify-content: center;
+}
+    
+#top ul{
+    /* メニュー群の横幅 指定しないと1行表示にできない */
+    width: 700px;
+    /* 横並び左寄せ */
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    /* margin0にしないと2行表示になる */
+    margin: 0px;
+}
+
+#top li{
+    margin-left: 20px;
+}
+
+#top li img{
+    width: 20px;
+    height: 20px;
+}
+ 
+
+/*-------------------------------------------
+　mainのレイアウト設定
+-------------------------------------------*/
+
+#main{
+    margin: 100px 0px;
+    text-align: center;
+}
+
+#main img{
+    /* サイズを指定して最後にobject-fitをすると画像トリミングになる */
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+
+
+
+/*-------------------------------------------
+　sectionごとのレイアウト設定
+-------------------------------------------*/
+
+/* 全体を中央揃えにする */
+section{
+    width: 60%;
+    /* 水平方向の中央揃え */
+    margin: 0 auto;
+}
+
+/* section1 関連 */
+#profile{
+    /* フォントサイズ */
+    font-size: small;
+}
+
+#user_name {
+    /* x-largeより大きい文字はサイズ指定、太字で表示 */
+    font-size: 40px;
+    font-weight: bold;
+    
+    /* displayをinline-blockにして左寄せにすると全体は中央揃えでテキストだけ左寄せにできる*/
+    display: inline-block;  
+    text-align: left;
+
+    /* 要素のサイズをprofileのdivタグに合わせる */
+    width: 100%;
+
+    /* 上下の余白を削除する */
+    margin: 0px;
+}
+
+#user_detail {
+    /* これを指定しないと名前欄と左端が合わない*/
+    padding-left: 0px;
+    list-style: none;
+
+    /* リストの場合はulタグにdisplay、liタグにtext-alignで左寄せを指定する*/
+    display: inline-block;
+
+    /* 要素のサイズをprofileのdivタグに合わせる */
+    width: 100%;
+}
+#user_detail li{
+    text-align: left;
+}
+ 
+#user_contents{
+    display: inline-block;
+    text-align: left;
+}
+
+ /* section2 関連 */
+ #works_images{
+    width: 100%
+ }
+ #works_images ul{
+    display: flex;
+    /* 折り返して表示する */
+    flex-wrap : wrap;
+    /* ulタグにpadding-topが設定されるのでクリアする */
+    padding: 0px;
+ }
+
+ #works_images ul li{
+    padding-left: 20px;
+    padding-top: 20px;
+    /* liタグの横サイズを画面3分割にするとimgタグにも適用される */
+    width: 28%;
+    list-style: none;
+ }
+
+ #works_images ul li img{
+    /* 縦横比を維持して縮小する imgタグに指定しないと効かない */
+    height: auto;
+ }
+
+
+/* section3 関連 */
+#news-table{
+
+    /* 幅いっぱいにする */
+    width: 100%;
+
+    /* fontもいくつか重複定義している */
+    font-size: small;
+
+    /* 列間のすき間をなくす */
+    border-spacing: 0;
+
+    /* これを指定しておくと2行目以降が二重線にならない */
+    border-collapse: collapse;
+}
+#news-table tr{
+    /* 横線だけ引く*/
+    border-width: 1px 0px;
+    border-color: gray;
+    border-style: solid;    
+}
+#news-table td {
+    /* テーブルタグの要素は左揃えで表示する */
+    text-align: left;
+
+    /* 行間を開ける */
+    padding: 15px;
+}
+
+/* sectio43 関連 */
+#contact-form div{
+    /* flexで横並びにする */
+    display: flex;
+    flex-direction: row;
+}
+#contact-form label{
+    /* blockタイプにしてラベル幅を指定する */
+    display: block;
+    width: 20%;
+    text-align: left;
+}
+
+/* 各入力要素 */
+#contact-form input[type="text"],
+#contact-form input[type="mail"],
+#contact-form textarea{
+    /* flex:1にするとラベル幅に合わせて可変でサイズが変わる */
+    display: block;
+    flex: 1;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* 送信ボタン */
+#contact-form input[type="submit"]{
+    width: 200px;
+    height: 50px;
+    background-color: #24292e;
+    color: white;
+    border-color: #24292e;
+}
+
+#contact-form input[type="submit"]:hover{
+    background-color: white;
+    color: black;
+}
+
+/*-------------------------------------------
+　footerのレイアウト設定
+-------------------------------------------*/
+ 
+
+/*-------------------------------------------
+　スマートフォンのレイアウト設定
+-------------------------------------------*/
+
+@media screen and (max-width: 600px) {
+
+  /* スマホの場合はトップメニュー2段表示 */
+  #top nav{
+    display: block;
+    text-align: center;
+   }
+  /* 2行目のリンク集は横向き */
+  #top ul{
+    width: 100%;
+    padding-left: 0px;
+    text-align: center;
+
+    /* 横並び中央寄せ */
+    display: flex;
+    justify-content: center;
+  }
+
+  /* メニューとトップ画像の間の幅を狭くする */
+  #main{
+      margin: 20px 0px;
+  }
+  /* スマホの場合はセクション幅を広げる */
+  section{
+    width: 100%;
+  }
+  /* スマホの場合は画像の表示領域を広げる*/
+  #works_images{
+    width: 90%;
+  }
+  /* スマホの場合は、worksのスタイル 縦並び */
+  #works_images ul{
+    display: block;
+    margin: auto;
+    padding: 0px;
+  }
+
+  /* widthを100%にしないと3分割の幅のままになる */
+  #works_images ul li{
+    width: 100%;
+  }
+  #works_images img{
+    width: 100%;
+  }
+
+  #news-table{
+    /* 幅いっぱいにすると見づらいのでサイズを調整 */
+    width: 90%;
+    margin: 0 auto;
+  }
+  /* 行ごとにpaddingを設定する */
+  #news-table tr{
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  /* テーブルは2行表示にする */
+  #news-table td{
+    /* block表示にするだけでtdを2段表示にできる */
+    display: block;
+    /* セル間のpaddingは0にする　*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  /* formは縦並びにする */
+  #contact-form div{
+    display: block;
+    margin-left: 20px;
+}
+
+  /* formは縦並びにする */
+  #contact-form input,
+  #contact-form textarea{
+    width: 80%;
+  }  
+
+}
